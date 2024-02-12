@@ -37,8 +37,10 @@ public class ItemServiceImpl implements ItemService{
         if(category !=null){
             Item item = new Item();
             item.setName(itemDTO.getName());
+            item.setBrand(itemDTO.getBrand());
+            item.setUnit(itemDTO.getUnit());
             item.setPrice(itemDTO.getPrice());
-            item.setQty(itemDTO.getQty());
+           // item.setQty(itemDTO.getQty());
             item.setCategory(category);
 
             return itemRepository.save(item);
@@ -54,8 +56,10 @@ public class ItemServiceImpl implements ItemService{
 
         if(exsistingItem !=null){
             exsistingItem.setName(item.getName());
-            exsistingItem.setPrice(item.getPrice());
+            exsistingItem.setBrand(item.getBrand());
+            exsistingItem.setUnit(item.getUnit());
             exsistingItem.setQty(item.getQty());
+            exsistingItem.setPrice(item.getPrice());
             exsistingItem.setCategory(item.getCategory());
             
             return itemRepository.save(exsistingItem);

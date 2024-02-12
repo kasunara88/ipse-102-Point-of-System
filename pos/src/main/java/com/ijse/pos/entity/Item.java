@@ -1,6 +1,8 @@
 package com.ijse.pos.entity;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -11,6 +13,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.ManyToOne;
 import lombok.Getter;
@@ -24,12 +27,18 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long itemId;
     private String name;
-    private Double price;
+    private String brand; // Brand of the item
+    private String unit; // Unit of measurement (e.g., "kg", "pieces")
     private Integer qty;
-
+    private Double price;
+    
     @ManyToOne
     @JoinColumn(name = "category_Id")
     private ItemCategory category;
+
+    @JsonIgnore
+    @ManyToMany(mappedBy = "items")
+    private Set<Stock> stock = new HashSet<>();
 
 
     // @JsonIgnore
