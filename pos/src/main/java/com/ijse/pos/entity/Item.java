@@ -10,7 +10,9 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,9 +24,16 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long itemId;
     private String name;
+    private Double price;
+    private Integer qty;
 
-    @JsonIgnore
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "item", cascade = CascadeType.ALL)
-    private List<Stock> stock;
+    @ManyToOne
+    @JoinColumn(name = "category_Id")
+    private ItemCategory category;
+
+
+    // @JsonIgnore
+    // @OneToMany(fetch = FetchType.LAZY,mappedBy = "item", cascade = CascadeType.ALL)
+    // private List<Stock> stock;
 
 }
