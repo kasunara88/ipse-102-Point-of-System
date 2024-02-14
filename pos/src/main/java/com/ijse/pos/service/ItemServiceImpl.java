@@ -40,7 +40,7 @@ public class ItemServiceImpl implements ItemService{
             item.setBrand(itemDTO.getBrand());
             item.setUnit(itemDTO.getUnit());
             item.setPrice(itemDTO.getPrice());
-           // item.setQty(itemDTO.getQty());
+            item.setQty(itemDTO.getQty());
             item.setCategory(category);
 
             return itemRepository.save(item);

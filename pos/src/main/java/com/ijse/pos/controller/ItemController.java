@@ -32,9 +32,9 @@ public class ItemController {
     }
 
     @PostMapping("/items")
-    public ResponseEntity<?> createItem(@RequestBody ItemDTO itemDTO) {
+    public ResponseEntity<?> createItem(@RequestBody ItemDTO items) {
         try {
-            return ResponseEntity.status(HttpStatus.CREATED).body(itemService.createItem(itemDTO));
+            return ResponseEntity.status(HttpStatus.CREATED).body(itemService.createItem(items));
 
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Faill to Create the Item");
@@ -42,7 +42,7 @@ public class ItemController {
         }
     }
 
-    @GetMapping("/items/{id}")
+    @GetMapping("/items/{itemId}")
     public ResponseEntity <Item> getItemById(@PathVariable Long itemId){
         Item item = itemService.getItemById(itemId);
         if(item != null){
@@ -52,17 +52,17 @@ public class ItemController {
         }
     }
 
-        @PutMapping("/items/{id}")
-        public Item updateItem(@PathVariable Long itemId, @RequestBody Item item){
-            return itemService.updateItem(itemId, item);
+        @PutMapping("/items/{itemId}")
+        public Item updateItem(@PathVariable Long itemId, @RequestBody Item items){
+            return itemService.updateItem(itemId, items);
         }
 
-        @GetMapping("/items/{id}/category")
+        @GetMapping("/categories/{categoryId}/items")
         public ResponseEntity <List<Item>> getItemByCategory(@PathVariable Long categoryId){
             return ResponseEntity.ok().body(itemService.getItemsByCategory(categoryId));
         }
 
-        @DeleteMapping("/items/{id}")
+        @DeleteMapping("/items/{itemId}")
         public ResponseEntity<?> deleteItem(@PathVariable Long itemId){
             itemService.deleteItem(itemId);
             return ResponseEntity.ok().build();

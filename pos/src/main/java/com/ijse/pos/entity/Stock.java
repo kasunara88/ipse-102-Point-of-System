@@ -19,17 +19,18 @@ import lombok.Setter;
 @Setter
 @Table(name = "stocks")
 public class Stock {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long stockId;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long stockId;
 
-    @ManyToMany
-    @JoinTable(name = "stock_item", joinColumns = @JoinColumn(name = "stock_id"), inverseJoinColumns = @JoinColumn(name = "item_id"))
-    private Set<Item> items = new HashSet<>();
+  @ManyToMany
+  @JoinTable(name = "stock_item", joinColumns = @JoinColumn(name = "stock_id"), inverseJoinColumns = @JoinColumn(name = "item_id"))
+  private Set<Item> items = new HashSet<>();
 
-    private Integer quantityInStock; // private Integer qty;
+  private Integer quantityInStock; // private Integer qty;
 
-  //  private boolean available; // Indicates whether the product is currently available for purchase
+  // private boolean available; // Indicates whether the product is currently
+  // available for purchase
 
-   // private boolean onSale; // Indicates whether the product is currently on sale
+  // private boolean onSale; // Indicates whether the product is currently on sale
 }

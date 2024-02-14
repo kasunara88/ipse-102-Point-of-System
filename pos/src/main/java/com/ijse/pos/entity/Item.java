@@ -30,7 +30,7 @@ public class Item {
     private Double price;
     
     @ManyToOne
-    @JoinColumn(name = "category_Id")
+    @JoinColumn(name = "category_id")
     private ItemCategory category;
 
     @JsonIgnore

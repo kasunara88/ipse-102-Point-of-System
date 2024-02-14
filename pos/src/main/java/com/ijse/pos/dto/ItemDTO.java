@@ -10,6 +10,6 @@ public class ItemDTO {
     private String brand;
     private String unit;
     private Double price;
-    //private Integer qty;
+    private Integer qty;
     private Long category_Id;
 }
