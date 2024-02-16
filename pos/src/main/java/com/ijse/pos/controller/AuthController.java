@@ -18,8 +18,11 @@ import com.ijse.pos.repository.UserRepository;
 import com.ijse.pos.security.jwt.JWTTokenProvider;
 import com.ijse.pos.service.UserService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
 @CrossOrigin(origins = "*")
+@Tag(name = "Authentication", description = "Authentication API")
 public class AuthController {
     @Autowired
     UserRepository userRepository;
