@@ -35,12 +35,12 @@
 			<artifactId>springfox-swagger2</artifactId>
 			<version>3.0.0</version>
 		</dependency> -->
-
+<!-- 
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>3.0.0</version>
-		</dependency>
+		</dependency> -->
 
 		<!-- <dependency>
         <groupId>io.springfox</groupId>
@@ -52,8 +52,6 @@
       <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
       <version>2.3.0</version>
    </dependency>
-
-
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ijse.pos.service.ItemCategoyService;
@@ -20,6 +21,7 @@ import com.ijse.pos.entity.*;
 
 @RestController
 @CrossOrigin(origins = "*")
+//@RequestMapping("/api/v1")
 @Tag(name = "Item Category", description = " This API is used for CRUD operations on Item Category")
 public class ItemCategoryController {
 
