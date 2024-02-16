@@ -13,10 +13,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ijse.pos.service.ItemCategoyService;
+
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 import com.ijse.pos.entity.*;
 
 @RestController
 @CrossOrigin(origins = "*")
+@Tag(name = "Item Category", description = " This API is used for CRUD operations on Item Category")
 public class ItemCategoryController {
 
     @Autowired

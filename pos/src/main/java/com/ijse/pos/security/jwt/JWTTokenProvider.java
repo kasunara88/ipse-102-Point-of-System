@@ -35,7 +35,7 @@ public class JWTTokenProvider {
     public String generateToken(Authentication authentication){
        UserDetails userPrincipal = (UserDetails) authentication.getPrincipal();
 
-        return Jwts.builder()
+       return Jwts.builder()
         .setSubject(userPrincipal.getUsername())
         .setIssuedAt(new Date())
         .setExpiration(new Date(new Date().getTime()+jwtExpirationInMs))

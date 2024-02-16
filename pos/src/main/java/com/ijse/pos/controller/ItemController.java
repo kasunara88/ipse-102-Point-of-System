@@ -14,13 +14,16 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
 import com.ijse.pos.dto.ItemDTO;
 import com.ijse.pos.entity.Item;
 import com.ijse.pos.service.ItemService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+
 @RestController
 @CrossOrigin(origins = "*")
+@Tag(name = "Item Management", description = " This API is used for Item Management")
 public class ItemController {
 
     @Autowired

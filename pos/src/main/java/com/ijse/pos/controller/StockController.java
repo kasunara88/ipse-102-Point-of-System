@@ -18,8 +18,11 @@ import com.ijse.pos.entity.Stock;
 import com.ijse.pos.service.ItemService;
 import com.ijse.pos.service.StockService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
 @CrossOrigin(origins = "*")
+@Tag(name = "Stock Controller", description = " This API is used for Stock Management")
 public class StockController {
 
     @Autowired
