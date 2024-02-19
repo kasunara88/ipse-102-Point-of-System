@@ -21,7 +21,6 @@ import com.ijse.pos.entity.*;
 
 @RestController
 @CrossOrigin(origins = "*")
-//@RequestMapping("/api/v1")
 @Tag(name = "Item Category", description = " This API is used for CRUD operations on Item Category")
 public class ItemCategoryController {
 
